@@ -1,0 +1,308 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "rick wiki morty",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "NumberCharactersIntent",
+          "slots": [],
+          "samples": [
+            "cuántos personajes existen en la serie",
+            "cuántos personajes hay en rick y morty"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "StateCharacterIntent",
+          "slots": [
+            {
+              "name": "character",
+              "type": "character",
+              "samples": [
+                "de {character}",
+                "{character}"
+              ]
+            }
+          ],
+          "samples": [
+            "quiero saber si un personaje está vivo",
+            "Está muerto {character}",
+            "Está vivo {character}"
+          ]
+        },
+        {
+          "name": "CharacterIntent",
+          "slots": [
+            {
+              "name": "character",
+              "type": "character",
+              "samples": [
+                "{character}",
+                "de {character}"
+              ]
+            }
+          ],
+          "samples": [
+            "quiero saber información sobre un personaje",
+            "que género es {character}",
+            "{character} es hombre o mujer",
+            "Dónde vive {character}",
+            "De dónde es {character}",
+            "Quién es {character}",
+            "Dime datos sobre {character}",
+            "Dime de que especie es {character}"
+          ]
+        },
+        {
+          "name": "PlanDateIntent",
+          "slots": [
+            {
+              "name": "character",
+              "type": "character",
+              "samples": [
+                "de {character}",
+                "{character}"
+              ]
+            },
+            {
+              "name": "date",
+              "type": "AMAZON.DATE",
+              "samples": [
+                "{date}"
+              ]
+            }
+          ],
+          "samples": [
+            "quier planear una cita",
+            "Quiero tener una cita con {character}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "8",
+              "name": {
+                "value": "Rick juez",
+                "synonyms": [
+                  "juez Rick",
+                  "Rick juez"
+                ]
+              }
+            },
+            {
+              "id": "14",
+              "name": {
+                "value": "Morty alienígena"
+              }
+            },
+            {
+              "id": "2",
+              "name": {
+                "value": "Morty",
+                "synonyms": [
+                  "El nieto de Rick",
+                  "Morty Smith"
+                ]
+              }
+            },
+            {
+              "id": "1",
+              "name": {
+                "value": "Rick",
+                "synonyms": [
+                  "El abuelo de Morty",
+                  "Rick Sanchez"
+                ]
+              }
+            }
+          ],
+          "name": "character"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "PlanDateIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "character",
+              "type": "character",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1379426011408.759192449050"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1379426011408.759192449050.272445729349"
+                }
+              ]
+            },
+            {
+              "name": "date",
+              "type": "AMAZON.DATE",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1494361722112.426916143325"
+              },
+              "validations": [
+                {
+                  "type": "isInDuration",
+                  "prompt": "Slot.Validation.1379426011408.459706177382.1246476086335",
+                  "start": "2022-09-13",
+                  "end": "2023-09-13"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "StateCharacterIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "character",
+              "type": "character",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.838693999903.1657788465556"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.838693999903.1657788465556.885869194798"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "CharacterIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "character",
+              "type": "character",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.774096072168.1224401809210"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.774096072168.1224401809210.1189614576317"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1494361722112.426916143325",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿Para cuándo la quieres?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.838693999903.1657788465556",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿De qué personaje quieres conocer el estado de vida?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.838693999903.1657788465556.885869194798",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Actualmente solo conozco información sobre Rick, Morty, Rick juez y Rick alienígena "
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.774096072168.1224401809210.1189614576317",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Actualmente solo conozco información sobre Rick, Morty, Rick juez y Rick alienígena"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1379426011408.759192449050.272445729349",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Actualmente solo conozco información sobre Rick, Morty, Rick juez y Rick alienígena"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.774096072168.1224401809210",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Tengo información sobre Rick, Morty, Rick juez y Rick alienígena ¿Dime de quién quieres saber información?"
+          },
+          {
+            "type": "PlainText",
+            "value": "¿De qué personaje quieres saber información?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1379426011408.759192449050",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "¿De qué personaje quieres saber información?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1379426011408.459706177382.1246476086335",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Esa fecha ya pasó, dime una fecha en la que pueda agendar la cita"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "15"
+}
