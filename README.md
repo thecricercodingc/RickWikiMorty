@@ -1,6 +1,8 @@
 # RickWikiMorty
 Skill de Alexa desarrollada con ASK en Alexa Developer Console con conexiones a APIS externas y peticiones HTTP/S
 
+Fue diseñada para dar una capacitación.
+
 # Paso a paso
 ver ppt: https://docs.google.com/presentation/d/1izSojPLuWngZ-4riQkjgZz5qTLKIhvxRNxtKnLAb3OY/edit#slide=id.g13946153b42_0_488
 
