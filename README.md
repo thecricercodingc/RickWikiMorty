@@ -2,7 +2,6 @@
 Skill de Alexa desarrollada con ASK en Alexa Developer Console con conexiones a APIS externas y peticiones HTTP/S
 
 #Paso a paso
-
 ver ppt: https://docs.google.com/presentation/d/1izSojPLuWngZ-4riQkjgZz5qTLKIhvxRNxtKnLAb3OY/edit#slide=id.g13946153b42_0_488
 ver api: https://rickandmortyapi.com/api/character
 ver video: https://drive.google.com/file/d/1ex06cfawHVcWtdWIiQd6H76WviiH5yJG/view?usp=sharing
